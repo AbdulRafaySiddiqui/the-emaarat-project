@@ -1,0 +1,78 @@
+.loader {
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  position: fixed;
+  top: 0;
+
+  .logo {
+    position: absolute;
+    left: 50%;
+    top: 4%;
+    // left: 50%;
+    transform: translate(-50%, 0%);
+    color: black;
+
+    .reveal {
+      font-family: "Gilroy";
+
+      .logo_text {
+        font-weight: 300;
+        line-height: 100%;
+        font-size: 1.5rem;
+        text-align: center;
+        // font-size: 7.594rem;
+      }
+
+      .bold {
+        font-weight: 700;
+      }
+    }
+  }
+
+  .image {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .loading-image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .progress {
+    width: 80vw;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+
+    .progress__bar {
+      width: 100%;
+      height: 2px;
+      background-color: black;
+      position: relative;
+      .progress__indicator {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: black;
+        position: absolute;
+        top: -14px;
+        left: 0%;
+      }
+    }
+
+    .progress__caption {
+      margin-top: 1vw;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}
+
+.reveal {
+  overflow: hidden;
+}

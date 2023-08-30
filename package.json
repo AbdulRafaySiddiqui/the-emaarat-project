@@ -1,0 +1,23 @@
+{
+  "name": "the-emaarat-project",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "connect-livereload": "^0.6.1",
+    "express": "^4.18.2",
+    "gsap": "^3.12.2",
+    "livereload": "^0.9.3",
+    "node-sass-middleware": "^1.0.1",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.29.3",
+    "node-sass": "^9.0.0",
+    "nodemon": "^3.0.1"
+  },
+  "scripts": {
+    "start:server": "nodemon app.js",
+    "start:dev": "yarn run start:server & yarn run start:browser-sync",
+    "start:browser-sync": "browser-sync start --proxy 'http://localhost:3000' --files 'public/css/*.css, public/js/*.js, src/views/*.pug'"
+  }
+}

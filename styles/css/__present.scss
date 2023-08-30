@@ -1,0 +1,118 @@
+.present {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+
+  .present-inner {
+    height: 100vh;
+    background-color: #2a2a2a;
+    padding: 120px;
+    position: relative;
+    overflow: visible;
+
+    .pattern-img {
+      z-index: 2;
+      width: 800px;
+      height: auto;
+      transform-origin: bottom right;
+      transform: rotate(90deg);
+      will-change: transform;
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+    }
+
+    .present-content {
+      z-index: 2;
+      max-width: 80vw;
+
+      .heading {
+        color: #fff;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-family: Neuemontreal, sans-serif;
+        font-size: 11.391rem;
+        line-height: 100%;
+        position: static;
+        top: 20%;
+        left: 10%;
+      }
+
+      .content {
+        max-width: 50%;
+        color: #f5d070;
+        margin-bottom: 0;
+        padding-left: 29px;
+        padding-right: 0;
+        font-family: Neuemontreal, sans-serif;
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 130%;
+      }
+
+      .scroll-now {
+        grid-column-gap: 40px;
+        grid-row-gap: 40px;
+        flex-direction: column;
+        padding-left: 30px;
+        display: flex;
+        position: absolute;
+        bottom: 5vh;
+
+        .line {
+          width: 1px;
+          height: 120px;
+          background-color: #fff;
+        }
+
+        .scroll-text {
+          color: #fff;
+          font-family: Neuemontreal, sans-serif;
+          font-size: 1.5rem;
+          font-weight: 300;
+          line-height: 100%;
+        }
+      }
+    }
+  }
+
+  .present-section-content {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: #f3f7f6;
+
+    h1.heading {
+      transform-origin: center top;
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      font-size: 2.25rem;
+      font-weight: 300;
+
+      span {
+        display: inline-block;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+    }
+
+    .image-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      .image {
+        z-index: -1;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        object-fit: contain;
+        opacity: 1 !important;
+      }
+    }
+  }
+}
