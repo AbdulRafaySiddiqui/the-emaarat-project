@@ -13,7 +13,7 @@
   transform: perspective(100px) rotateX(0) rotateY(-70deg) rotateZ(0)
     scale(0.06);
   opacity: 0;
-  z-index: 9;
+  // z-index: 9;
   width: 100%;
   height: 100%;
   // opacity: 1;
@@ -28,22 +28,12 @@
   left: 0%;
   overflow: hidden;
 
-  .timeline {
-    z-index: 1;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, 0%);
-    width: 400vw;
-    left: 0px;
-    background: black;
-    height: 5px;
-  }
-
   .item {
     width: 100vw;
     height: 100vh;
     opacity: 1;
     flex: none;
+    position: relative;
   }
 
   .pinned-section {
@@ -65,7 +55,7 @@
   }
 
   .section1__container {
-    z-index: 10;
+    // z-index: 10;
   }
 
   .content.section1 {
@@ -124,7 +114,7 @@
   .content.section2 {
     height: 100%;
     color: #fff;
-    z-index: -1;
+    // z-index: -1;
     background-color: #4e5a4a;
     padding: 40px;
     overflow: visible;
@@ -237,9 +227,10 @@
     justify-content: center;
     align-items: center;
     display: flex;
-    position: static;
+    position: relative;
 
     .past-types {
+      position: absolute;
       z-index: 2;
       width: 80%;
       height: 95%;
@@ -248,7 +239,9 @@
       justify-content: center;
       align-items: center;
       display: flex;
-      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
 
       .past-types-inner {
         width: 95%;
@@ -424,6 +417,19 @@
     .image-10 {
       position: absolute;
       bottom: 0;
+    }
+  }
+
+  .timeline {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, 0%);
+    width: 100%;
+    left: 0px;
+    background: black;
+    height: 5px;
+
+    .timeline__progress {
     }
   }
 }

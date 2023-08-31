@@ -10,8 +10,6 @@ export async function introAnimation() {
 
   canvasWrapper.style.zIndex = -200;
 
-  fluidAnimation(canvas);
-
   gsap.set([".intro", ".loader", ".past"], {
     userSelect: "none",
     pointerEvents: "none",
@@ -82,11 +80,15 @@ export async function introAnimation() {
       "anim"
     );
 
-  scrollTween.to(pastElChilds, {
-    duration: 8,
-    x: () => -(horizontalScrollWidth - pastElChilds[0].offsetWidth),
-    ease: "none",
-  });
+  scrollTween.to(
+    pastElChilds,
+    {
+      duration: 8,
+      x: () => -(horizontalScrollWidth - pastElChilds[0].offsetWidth),
+      ease: "none",
+    },
+    "scroll"
+  );
 
   new SplitType(".para1", {
     types: "words, chars",

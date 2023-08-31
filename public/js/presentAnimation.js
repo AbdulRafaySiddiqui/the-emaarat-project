@@ -4,6 +4,7 @@ export class PresentAnimation {
     this.paraChars = gsap.utils.toArray(".present-content .content .char");
     this.animatePatternImage();
     this.animateParagraph();
+    this.animatePresentTitle();
     this.animatePresentContent();
   }
 
@@ -60,13 +61,14 @@ export class PresentAnimation {
   breakContent() {
     new SplitType(".present-content .content", { type: "words, chars" });
     new SplitType(".present-content .heading", { type: "chars" });
+    new SplitType(".present-section-content .para", { type: "words, chars" });
   }
 
-  animatePresentContent() {
+  animatePresentTitle() {
     gsap
       .timeline({
         scrollTrigger: {
-          trigger: ".present-section-content",
+          trigger: ".present-section-title",
           start: "top top",
           end: "bottom top",
           pin: true,
@@ -75,7 +77,7 @@ export class PresentAnimation {
         },
       })
       .to(
-        ".present-section-content .heading",
+        ".present-section-title .heading",
         {
           scale: 2.5,
           ease: "none",
@@ -90,5 +92,20 @@ export class PresentAnimation {
         },
         "animate"
       );
+  }
+
+  animatePresentContent() {
+    gsap.to(".present-section-content .para .char", {
+      opacity: 1,
+      stagger: 0.25,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".present-section-content",
+        pin: true,
+        scrub: true,
+        start: "top top",
+        end: "bottom top",
+      },
+    });
   }
 }
