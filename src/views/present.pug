@@ -16,11 +16,41 @@ section.present
             <br />
             span.head-text PROJECT
         .image-container
-            img.image(src="/assets/high-building.png")
+            .image 
+                img(src="/assets/high-building.png")
     .present-section-content
         p.para 
             | Modern architecture is a style of building that emphasizes function and a streamlined form over ornamentation. This design aesthetic is a departure from more elaborate and decorated homes like Queen Anne, Victorian, or Gothic Revival styles. Modern architecture usually involves sharp, clean lines. There are several styles of modern architecture in the United States alone. From 1930 through 1970, there are categories like Expressionist, Constructivist, and Mid-Century Modern, to name a few. The modern movement was not short-lived, and it encompasses several sub-styles that span nearly 60 years. In this way, it can be difficult to pinpoint an exact starting point. To some, the style includes more transitional architecture like the Art Deco and Arts and Crafts movements. To others, those earlier styles served as inspiration for more "pure," mid-century modern architects.
-
+    .present-section-image-reveal
+        .content
+            h1.content-primary I AM REALLY
+            h3.content-secondary 
+                | BECOMING A WEB
+                <br />
+                | ANIMATION WIZARD
+        .image-reveal
+            img(src="/assets/present-reveal-image.png")
+    .present-section-image-slider
+        .image-slider-inner
+            .bg-image.louvre(data-animcompleted="true")
+            .bg-image.zaragoza(data-animcompleted="false")
+            .bg-image.capital-hill(data-animcompleted="false")
+            .bg-image.marina-bay(data-animcompleted="false")
+        .details
+            .detail-image
+                img(src="/assets/louvre-inner.png", alt="Louvre Museum").inner-image.louvre(data-animcompleted="true")
+                img(src="/assets/zaragoza-inner.png", alt="Louvre Museum").inner-image.zaragoza(data-animcompleted="false")
+                img(src="/assets/capital-hill-inner.png", alt="Louvre Museum").inner-image.capital-hill(data-animcompleted="false")
+                img(src="/assets/marina-bay-inner.png", alt="Louvre Museum").inner-image.marina-bay(data-animcompleted="false")
+            .detail-content
+                h4 Louvre Museum
+                p.para
+                    | The Louvre Estate includes both the Carrousel Garden and Tuileries Garden. These historical parks offer beautiful settings for a leisurely walk and seasonal activities for all the family to enjoy.
+        .buttons-container
+            button.slider-btn.image1(data-isactive="true" data-index="0") Image 1
+            button.slider-btn.image2(data-isactive="false" data-index="1") Image 2
+            button.slider-btn.image3(data-isactive="false" data-index="2") Image 3
+            button.slider-btn.image4(data-isactive="false" data-index="3") Image 4
 //-   .item
 //-     .content.section6
 //-       img.image-11(src='assets/pattern.png' loading='lazy' sizes='(max-width: 479px) 67vw, (max-width: 767px) 6vw, 1vw' width='503.5' alt='pattern' srcset='assets/pattern-p-500.png 500w, assets/pattern-p-800.png 800w, assets/pattern.png 1007w')

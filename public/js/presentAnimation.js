@@ -6,6 +6,7 @@ export class PresentAnimation {
     this.animateParagraph();
     this.animatePresentTitle();
     this.animatePresentContent();
+    this.animateRevealImage();
   }
 
   animatePatternImage() {
@@ -87,7 +88,7 @@ export class PresentAnimation {
       .to(
         ".image-container .image",
         {
-          top: 0,
+          y: 0,
           ease: "none",
         },
         "animate"
@@ -95,16 +96,37 @@ export class PresentAnimation {
   }
 
   animatePresentContent() {
-    gsap.to(".present-section-content .para .char", {
-      opacity: 1,
-      stagger: 0.25,
-      ease: "none",
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: ".present-section-content",
+          // pin: true,
+          scrub: true,
+          start: "top-=50% top",
+          end: "bottom-=50% top",
+        },
+      })
+      .to(".present-section-content .para .char", {
+        opacity: 1,
+        stagger: 0.25,
+        ease: "none",
+      });
+  }
+
+  animateRevealImage() {
+    gsap.to(".present-section-image-reveal .image-reveal", {
+      width: "100%",
+      // duration: 1.8,
+      // ease: Expo.easeInOut,
       scrollTrigger: {
-        trigger: ".present-section-content",
-        pin: true,
-        scrub: true,
+        id: "image-reveal",
+        trigger: ".present-section-image-reveal",
         start: "top top",
-        end: "bottom top",
+        markers: true,
+        pin: true,
+        // end: "bottom top"
+        // toggleActions: "play none none reverse",
+        scrub: true,
       },
     });
   }

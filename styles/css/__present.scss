@@ -108,11 +108,18 @@
 
       .image {
         z-index: -1;
+        height: 100%;
         position: absolute;
-        top: 100%;
+        top: 0;
+        left: 0;
+        transform: translateY(100%);
         width: 100%;
-        object-fit: contain;
         opacity: 1 !important;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
       }
     }
   }
@@ -126,11 +133,152 @@
       font-size: 1.8rem;
       max-width: 75vw;
       margin: 0px auto;
-      // margin-top: 20vh;
       color: rgba(28, 45, 55, 1);
 
       .char {
-        opacity: 0.3;
+        opacity: 0.2;
+      }
+    }
+  }
+
+  .present-section-image-reveal {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+    .content {
+      position: absolute;
+      z-index: 1;
+      top: 5%;
+      left: 50%;
+      color: white;
+      transform: translateX(-50%);
+      font-family: "Fahkwang", sans-serif;
+    }
+
+    .content-primary {
+      text-align: center;
+      font-size: 5.063rem;
+      font-weight: 400;
+    }
+
+    .content-secondary {
+      text-align: center;
+      font-size: 3.375rem;
+      font-weight: 400;
+    }
+
+    .image-reveal {
+      position: relative;
+      width: 60%;
+      overflow: hidden;
+      margin: 0 auto;
+      height: 100%;
+
+      img {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100vw;
+        height: 100vh;
+      }
+    }
+  }
+  .present-section-image-slider {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+    .image-slider-inner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      height: 80%;
+      margin: 0 auto;
+      overflow: hidden;
+
+      .bg-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+      }
+
+      .louvre {
+        background-image: url("/assets/louvre-bg.png");
+      }
+      .zaragoza {
+        background-image: url("/assets/zaragoza-bg.png");
+        top: -100%;
+      }
+      .capital-hill {
+        background-image: url("/assets/capital-hill-bg.png");
+        top: -100%;
+      }
+      .marina-bay {
+        background-image: url("/assets/marina-bay-bg.png");
+        top: -100%;
+      }
+    }
+    .details {
+      position: absolute;
+      top: 50%;
+      right: 15%;
+      width: 350px;
+      background: white;
+      padding: 40px;
+
+      .detail-image {
+        position: relative;
+        width: 100%;
+        height: 180px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        .zaragoza,
+        .capital-hill,
+        .marina-bay {
+          top: -100%;
+        }
+      }
+
+      .detail-content {
+        .para {
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    .buttons-container {
+      position: absolute;
+      bottom: 60px;
+      left: 10%;
+      display: flex;
+      gap: 20px;
+      z-index: 1;
+
+      button {
+        text-transform: uppercase;
+        padding: 6px 15px;
+        background: transparent;
+        cursor: pointer;
+        border: 1px solid #3089aa;
+        color: #3089aa;
+      }
+      button[data-isactive="true"] {
+        background: #3089aa;
+        color: white;
       }
     }
   }

@@ -1,3 +1,4 @@
+import { ImageSlider } from "./imageSlider.js";
 import { introAnimation } from "./introAnimation.js";
 import { loaderAnimation } from "./loadingAnimation.js";
 import { PresentAnimation } from "./presentAnimation.js";
@@ -44,7 +45,7 @@ ScrollTrigger.refresh();
 
 ScrollTrigger.defaults({
   scroller: ".main",
-  markers: true,
+  // markers: true,
 });
 
 const main = async () => {
@@ -52,6 +53,7 @@ const main = async () => {
   await introAnimation();
 
   new PresentAnimation();
+  new ImageSlider();
 };
 
 main().then(() => {
