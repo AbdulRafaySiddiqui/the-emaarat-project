@@ -108,7 +108,6 @@ export async function introAnimation() {
       trigger: ".section1",
       containerAnimation: scrollTween,
       scrub: true,
-      // markers: true,
       start: () => `+=${pastElChilds[0].offsetWidth - window.innerWidth / 4}px`,
       end: () => `+=${pastElChilds[0].offsetWidth + window.innerWidth / 2}px`,
       invalidateOnRefresh: true,
