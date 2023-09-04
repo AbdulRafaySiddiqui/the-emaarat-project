@@ -8,6 +8,8 @@ export async function introAnimation() {
   const canvas = document.getElementsByTagName("canvas")[0];
   const canvasWrapper = document.querySelector(".canvas");
 
+  fluidAnimation(canvas);
+
   canvasWrapper.style.zIndex = -200;
 
   gsap.set([".intro", ".loader", ".past"], {
