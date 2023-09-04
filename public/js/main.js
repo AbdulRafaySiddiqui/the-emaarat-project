@@ -1,3 +1,4 @@
+import { animateMarquee } from "./horizontalLoop.js";
 import { ImageSlider } from "./imageSlider.js";
 import { introAnimation } from "./introAnimation.js";
 import { loaderAnimation } from "./loadingAnimation.js";
@@ -54,6 +55,8 @@ const main = async () => {
 
   new PresentAnimation();
   new ImageSlider();
+
+  animateMarquee();
 };
 
 main().then(() => {
