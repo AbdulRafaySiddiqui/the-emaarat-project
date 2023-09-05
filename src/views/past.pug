@@ -1,6 +1,7 @@
 section.past
-    
-    .item.section1__container
+    .timeline
+        .timeline__progress
+    .item.section1__container(style="z-index: 2;")
         .content.section1
             img.papri(src='assets/image-87papri.png' loading='lazy' srcset='assets/image-87papri-p-500.png 500w, assets/image-87papri-p-800.png 800w, assets/image-87papri-p-1080.png 1080w, assets/image-87papri-p-1600.png 1600w, assets/image-87papri.png 1920w' sizes='(max-width: 991px) 2vw, 3vw' alt='bg noise')
             img.pyramid(src='assets/pyramid.png' loading='lazy' sizes='(max-width: 767px) 2vw, (max-width: 991px) 3vw, 100vw' srcset='assets/pyramid-p-500.png 500w, assets/pyramid.png 680w' alt='Pyramid')
@@ -10,7 +11,7 @@ section.past
                 .past-title-container
                     h1.past-title.caption-title UNKNOWN PYRAMID
     .item
-        .timeline
+        //- .timeline
         .content.section2
             p.para1.yellow.section1-text.para-text
                 | Historic architecture and old buildings are a testament to the past and the people who lived in it. They are a reflection of the culture, history, and values of the past. These buildings are not only beautiful but also have a unique charm that is hard to replicate. They are often seen as landmarks and tourist attractions that attract visitors from all over the world.
@@ -20,15 +21,13 @@ section.past
                     | Some examples of historic architecture include lasting palaces like Versailles or ancient temples across the world. These structures have stood the test of time and continue to inspire us today. They remind us of our roots and where we came from.
                 img.image-3(src='assets/image-112bg-effect1.png' loading='lazy' sizes='(max-width: 479px) 26vw, (max-width: 767px) 84vw, (max-width: 991px) 25vw, 41vw' srcset='assets/image-112bg-effect1-p-500.png 500w, assets/image-112bg-effect1-p-800.png 800w, assets/image-112bg-effect1-p-1080.png 1080w, assets/image-112bg-effect1-p-1600.png 1600w, assets/image-112bg-effect1.png 1666w' alt='background effect')
     .item
-        .timeline
+        //- .timeline
         .content.section3
             img.image-4(src='assets/image-86bg-effect2-1.png' loading='lazy' sizes='(max-width: 479px) 13vw, (max-width: 767px) 100vw, (max-width: 991px) 66vw, 64vw' srcset='assets/image-86bg-effect2-1-p-500.png 500w, assets/image-86bg-effect2-1-p-800.png 800w, assets/image-86bg-effect2-1-p-1080.png 1080w, assets/image-86bg-effect2-1-p-1600.png 1600w, assets/image-86bg-effect2-1-p-2000.png 2000w, assets/image-86bg-effect2-1.png 2560w' alt='bg-effect3')
             p.paragraph.para1.black.para-text
                 | Older structures can inform us about the culture, history, and values of the past. They can help us understand how people lived and what was important to them. They are a window into the past that can help us appreciate our present.
-            img.image-5(src='assets/image-84section3-bg.png' loading='lazy' sizes='(max-width: 479px) 24vw, (max-width: 767px) 100vw, (max-width: 991px) 51vw, 26vw' srcset='assets/image-84section3-bg-p-500.png 500w, assets/image-84section3-bg-p-800.png 800w, assets/image-84section3-bg-p-1080.png 1080w, assets/image-84section3-bg-p-1600.png 1600w, assets/image-84section3-bg-p-2000.png 2000w, assets/image-84section3-bg.png 2556w' alt='background wrapper')
             img.image-6(src='assets/Group-20section3-bg-overlay.png' loading='lazy' alt='background overlay' sizes='(max-width: 479px) 9vw, (max-width: 767px) 100vw, (max-width: 991px) 98vw, 10vw' width='367.5' srcset='assets/Group-20section3-bg-overlay-p-500.png 500w, assets/Group-20section3-bg-overlay.png 735w')
-    .item.pinned-section
-        
+    .item.pinned-section(style="z-index: 2;")
         .content.section4
             .past-types(style="z-index: 2;")
                 .past-types-inner
@@ -57,9 +56,19 @@ section.past
                                 | Built originally as an armory in 1876, the structure officially became a museum in 1897. By 1989, however, the German government decided to close the public structure due to its uncertainty as to how it wanted history to remember its military positions.
                             p.paragraph-2.text5
                                 | Derawar Fort is a fortress in Ahmadpur East Tehsil of Bahawalpur District in the Punjab province of Pakistan. Approx. 20 km south of the city of Ahmedpur East, the forty bastions of Derawar are visible for many miles in the Cholistan Desert.
-        .timeline
+        //- .timeline
+    //- .item
+    //-     .sketchfab-embed-wrapper(style="width: 100%; height: 100%;")
+    //-         iframe(title='Old house' frameborder='0' allowfullscreen='' mozallowfullscreen='true' style="width: 100%; height: 100%" webkitallowfullscreen='true' allow='autoplay; fullscreen; xr-spatial-tracking' xr-spatial-tracking='' execution-while-out-of-viewport='' execution-while-not-rendered='' web-share='' src='https://sketchfab.com/models/e2bfb782bd2d4aa2af7dd8d7c37e08e4/embed')  
+    //-         p(style='font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;')
+    //-             a(href='https://sketchfab.com/3d-models/old-house-e2bfb782bd2d4aa2af7dd8d7c37e08e4?utm_medium=embed&utm_campaign=share-popup&utm_content=e2bfb782bd2d4aa2af7dd8d7c37e08e4' target='_blank' rel='nofollow' style='font-weight: bold; color: #1CAAD9;')  Old house 
+    //-             |  by 
+    //-             a(href='https://sketchfab.com/yanix?utm_medium=embed&utm_campaign=share-popup&utm_content=e2bfb782bd2d4aa2af7dd8d7c37e08e4' target='_blank' rel='nofollow' style='font-weight: bold; color: #1CAAD9;')  yanix 
+    //-             |  on 
+    //-             a(href='https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=e2bfb782bd2d4aa2af7dd8d7c37e08e4' target='_blank' rel='nofollow' style='font-weight: bold; color: #1CAAD9;') Sketchfab
+
     .item.last-section
-        .timeline
+        //- .timeline
         .content.section5
             .top-images
                 img.image-8(src='assets/building1.png' loading='lazy' width='281.5' sizes='(max-width: 479px) 22vw, (max-width: 767px) 12vw, 1vw' alt='Building 1')

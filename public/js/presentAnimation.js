@@ -101,7 +101,6 @@ export class PresentAnimation {
       .timeline({
         scrollTrigger: {
           trigger: ".present-section-content",
-          // pin: true,
           scrub: true,
           start: "top-=50% top",
           end: "bottom-=50% top",
@@ -117,25 +116,18 @@ export class PresentAnimation {
   animateRevealImage() {
     gsap.to(".present-section-image-reveal .image-reveal", {
       width: "100%",
-      // duration: 1.8,
-      // ease: Expo.easeInOut,
       scrollTrigger: {
         id: "image-reveal",
         trigger: ".present-section-image-reveal",
         start: "top top",
         markers: true,
         pin: true,
-        // end: "bottom top"
-        // toggleActions: "play none none reverse",
         scrub: true,
       },
     });
   }
 
   lastSectionRevealAnimation() {
-    // gsap.to(".future-init-container", {
-
-    // })
     ScrollTrigger.create({
       trigger: ".future-init-container",
       start: "top top",

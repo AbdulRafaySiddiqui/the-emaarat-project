@@ -12,7 +12,7 @@ export async function introAnimation() {
 
   canvasWrapper.style.zIndex = -200;
 
-  gsap.set([".intro", ".loader", ".past"], {
+  gsap.set([".intro", ".loader"], {
     userSelect: "none",
     pointerEvents: "none",
   });
@@ -48,8 +48,6 @@ export async function introAnimation() {
 
   const introPast = document.querySelector(".intro-past");
 
-  console.log(".intropast", introPast);
-
   const scrollTween = gsap
     .timeline({
       scrollTrigger: {
@@ -82,15 +80,25 @@ export async function introAnimation() {
       "anim"
     );
 
-  scrollTween.to(
-    pastElChilds,
-    {
-      duration: 8,
-      x: () => -(horizontalScrollWidth - pastElChilds[0].offsetWidth),
-      ease: "none",
-    },
-    "scroll"
-  );
+  scrollTween
+    .to(
+      pastElChilds,
+      {
+        duration: 8,
+        x: () => -(horizontalScrollWidth - pastElChilds[0].offsetWidth),
+        ease: "none",
+      },
+      "scroll"
+    )
+    .to(
+      ".past .timeline .timeline__progress",
+      {
+        duration: 8,
+        left: "100%",
+        ease: "none",
+      },
+      "scroll"
+    );
 
   new SplitType(".para1", {
     types: "words, chars",
@@ -103,14 +111,40 @@ export async function introAnimation() {
   gsap.to(".char", {
     opacity: 1,
     ease: "none",
-    stagger: 0.01,
+    stagger: 0.5,
     scrollTrigger: {
       trigger: ".section1",
       containerAnimation: scrollTween,
       scrub: true,
-      start: () => `+=${pastElChilds[0].offsetWidth - window.innerWidth / 4}px`,
+      start: () => `+=${pastElChilds[0].offsetWidth - window.innerWidth / 5}px`,
       end: () => `+=${pastElChilds[0].offsetWidth + window.innerWidth / 2}px`,
       invalidateOnRefresh: true,
+    },
+  });
+
+  gsap.to(".section2 .para-wrapper .image-3", {
+    top: "60%",
+    scrollTrigger: {
+      id: "TEXT-REVEAL",
+      trigger: ".section2 .para-wrapper .image-3",
+      start: "bottom+=2400px top",
+      end: "bottom+=4800px top",
+      // containerAnimation: scrollTween,
+      // scrub: true,
+      toggleActions: "play none none reverse",
+      markers: true,
+    },
+  });
+
+  gsap.to(".section3 .image-4", {
+    top: "-160px",
+    scrollTrigger: {
+      id: "TEXT-REVEAL-2",
+      trigger: ".section3 .image-4",
+      start: "bottom+=3200px top",
+      end: "bottom+=5200px top",
+      toggleActions: "play none none reverse",
+      markers: true,
     },
   });
 

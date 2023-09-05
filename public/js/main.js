@@ -33,7 +33,7 @@ ScrollTrigger.scrollerProxy(".main", {
     };
   },
 
-  // follwoing line is not required to work pinning on touch screen
+  // following line is not required to work pinning on touch screen
 
   pinType: document.querySelector(".main").style.transform
     ? "transform"
@@ -59,6 +59,4 @@ const main = async () => {
   animateMarquee();
 };
 
-main().then(() => {
-  console.log("Hello World");
-});
+main().then(() => {});
