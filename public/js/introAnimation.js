@@ -129,8 +129,6 @@ export async function introAnimation() {
       trigger: ".section2 .para-wrapper .image-3",
       start: () => `bottom+=${window.innerWidth * 1.7}px top`,
       end: () => `bottom+=${window.innerWidth * 3.5}px top`,
-      // containerAnimation: scrollTween,
-      // scrub: true,
       toggleActions: "play none none reverse",
       markers: true,
     },

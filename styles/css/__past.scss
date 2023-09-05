@@ -34,6 +34,11 @@
     position: relative;
   }
 
+  .last-section {
+    background: #f3eeeb;
+    width: 400vw;
+  }
+
   .pinned-section {
     width: 600vw;
     background-color: #f3eeeb;
@@ -369,6 +374,7 @@
   }
 
   .content.section5 {
+    width: 100vw;
     height: 100%;
     background-image: url("/assets/bg-text-effect.png"),
       url("/assets/old-textured-bg.png");

@@ -31,7 +31,7 @@ export class SectionScrollAnimation {
                 end: () =>
                   `+=${
                     document.querySelector(".pinned-section").offsetWidth -
-                    (this.el.offsetWidth + 120)
+                    (this.el.offsetWidth + window.innerWidth / 5.36)
                   }px`,
                 scrub: true,
               },
@@ -45,7 +45,7 @@ export class SectionScrollAnimation {
                   end: () =>
                     `+=${
                       document.querySelector(".pinned-section").offsetWidth -
-                      this.el.offsetWidth
+                      (this.el.offsetWidth + window.innerWidth / 5.36)
                     }`,
                   scrub: true,
                   //   toggleActions: "play none none reverse",
