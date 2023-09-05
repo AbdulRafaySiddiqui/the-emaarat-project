@@ -30,76 +30,67 @@ section.present
                 | ANIMATION WIZARD
         .image-reveal
             img(src="/assets/present-reveal-image.png")
-    .present-section-image-slider
-        .image-slider-inner
-            .bg-image.louvre(data-animcompleted="true")
-            .bg-image.zaragoza(data-animcompleted="false")
-            .bg-image.capital-hill(data-animcompleted="false")
-            .bg-image.marina-bay(data-animcompleted="false")
-        .details
-            .detail-image
-                img(src="/assets/louvre-inner.png", alt="Louvre Museum").inner-image.louvre(data-animcompleted="true")
-                img(src="/assets/zaragoza-inner.png", alt="Louvre Museum").inner-image.zaragoza(data-animcompleted="false")
-                img(src="/assets/capital-hill-inner.png", alt="Louvre Museum").inner-image.capital-hill(data-animcompleted="false")
-                img(src="/assets/marina-bay-inner.png", alt="Louvre Museum").inner-image.marina-bay(data-animcompleted="false")
-            .detail-content
-                .detail-content-head
-                    h4.head Louvre Museum
-                    h4.head Zaragoza Bridge Pavilion
-                    h4.head Capital Hill Residence
-                    h4.head Marina Bay
-                .detail-content-paras
-                    p.para
-                        | The Louvre Estate includes both the Carrousel Garden and Tuileries Garden. These historical parks offer beautiful settings for a leisurely walk and seasonal activities for all the family to enjoy.
-                    p.para
-                        | The Zaragoza Bridge Pavilion, built in 2008, doubles as a pedestrian bridge across the Ebro River in Zaragoza, Spain. The building’s exterior, comprising 29,000 triangles, is composed of fiberglass-reinforced concrete.
-                    p.para
-                        | Located on the north-facing hillside within the Barvikha Forest near Moscow, where pine and birch trees grow up to 20m high, the Capital Hill Residence is divided into two main components. The first merges with the forested landscape.
-                    p.para
-                        | Discover Marina Bay Sands, a landmark destination in the heart of Singapore’s vibrant city district. Envisioned by renowned architect Moshe Safdie, the striking aesthetic defiantly blurs the line between art and architecture.
-        .buttons-container
-            button.slider-btn.image1(data-isactive="true" data-index="0") Louvre Museum
-            button.slider-btn.image2(data-isactive="false" data-index="1") Zaragoza Bridge Pavilion
-            button.slider-btn.image3(data-isactive="false" data-index="2") Capital Hill Residence
-            button.slider-btn.image4(data-isactive="false" data-index="3") Marina Bay
-    .places-marquee-container 
-        .place
-            img(src="/assets/orange-gradient.png", alt="Orange Gradient Aesthetics")
-            h1.place-name Capital Hill Residence
-        .place
-            img(src="/assets/red-gradient.png", alt="Orange Gradient Aesthetics")
-            h1.place-name Zaragoza Bridge Pavilion
-        .place
-            img(src="/assets/blue-gradient.png", alt="Orange Gradient Aesthetics")
-            h1.place-name Marina Bay
-        .place
-            img(src="/assets/orange-gradient.png", alt="Orange Gradient Aesthetics")
-            h1.place-name Louvre Museum
-        .place
-            img(src="/assets/orange-gradient.png", alt="Orange Gradient Aesthetics")
-            h1.place-name Capital Hill Residence
-        .place
-            img(src="/assets/red-gradient.png", alt="Orange Gradient Aesthetics")
-            h1.place-name Zaragoza Bridge Pavilion
-        .place
-            img(src="/assets/blue-gradient.png", alt="Orange Gradient Aesthetics")
-            h1.place-name Marina Bay
-        .place
-            img(src="/assets/orange-gradient.png", alt="Orange Gradient Aesthetics")
-            h1.place-name Louvre Museum
-    .future-init-container
-        video(src="/assets/bg-video.webm" autoplay loop muted).video 
-        h1.future-init-heading 
-            span WELCOME 
-            span TO THE 
-            span FUTURE
-//-   .item
-//-     .content.section6
-//-       img.image-11(src='assets/pattern.png' loading='lazy' sizes='(max-width: 479px) 67vw, (max-width: 767px) 6vw, 1vw' width='503.5' alt='pattern' srcset='assets/pattern-p-500.png 500w, assets/pattern-p-800.png 800w, assets/pattern.png 1007w')
-//-       .div-block
-//-         h1.heading-4 PRESENT
-//-         p.paragraph-3
-//-           | Modern architecture is a style of building that emphasizes function and a streamlined form over ornamentation. This design aesthetic is a departure from more elaborate and decorated homes like Queen Anne, Victorian, or Gothic Revival styles.
-//-       .div-block-3
-//-         .div-block-2
-//-         .text-block-2 scroll now
+    .present-section-aesthetics
+        .present-section-image-slider
+            .image-slider-inner
+                .bg-image.louvre
+                .bg-image.zaragoza
+                .bg-image.capital-hill
+                .bg-image.marina-bay
+            .details
+                .detail-image
+                    img(src="/assets/louvre-inner.png", alt="Louvre Museum").inner-image.louvre
+                    img(src="/assets/zaragoza-inner.png", alt="Louvre Museum").inner-image.zaragoza
+                    img(src="/assets/capital-hill-inner.png", alt="Louvre Museum").inner-image.capital-hill
+                    img(src="/assets/marina-bay-inner.png", alt="Louvre Museum").inner-image.marina-bay
+                .detail-content
+                    .detail-content-head
+                        h4.head Louvre Museum
+                        h4.head Zaragoza Bridge Pavilion
+                        h4.head Capital Hill Residence
+                        h4.head Marina Bay
+                    .detail-content-paras
+                        p.para
+                            | The Louvre Estate includes both the Carrousel Garden and Tuileries Garden. These historical parks offer beautiful settings for a leisurely walk and seasonal activities for all the family to enjoy.
+                        p.para
+                            | The Zaragoza Bridge Pavilion, built in 2008, doubles as a pedestrian bridge across the Ebro River in Zaragoza, Spain. The building’s exterior, comprising 29,000 triangles, is composed of fiberglass-reinforced concrete.
+                        p.para
+                            | Located on the north-facing hillside within the Barvikha Forest near Moscow, where pine and birch trees grow up to 20m high, the Capital Hill Residence is divided into two main components. The first merges with the forested landscape.
+                        p.para
+                            | Discover Marina Bay Sands, a landmark destination in the heart of Singapore’s vibrant city district. Envisioned by renowned architect Moshe Safdie, the striking aesthetic defiantly blurs the line between art and architecture.
+            .buttons-container
+                button.slider-btn.image1(data-isactive="true" data-index="0") Louvre Museum
+                button.slider-btn.image2(data-isactive="false" data-index="1") Zaragoza Bridge Pavilion
+                button.slider-btn.image3(data-isactive="false" data-index="2") Capital Hill Residence
+                button.slider-btn.image4(data-isactive="false" data-index="3") Marina Bay
+        .places-marquee-container 
+            .place
+                img(src="/assets/orange-gradient.png", alt="Orange Gradient Aesthetics")
+                h1.place-name Capital Hill Residence
+            .place
+                img(src="/assets/red-gradient.png", alt="Orange Gradient Aesthetics")
+                h1.place-name Zaragoza Bridge Pavilion
+            .place
+                img(src="/assets/blue-gradient.png", alt="Orange Gradient Aesthetics")
+                h1.place-name Marina Bay
+            .place
+                img(src="/assets/orange-gradient.png", alt="Orange Gradient Aesthetics")
+                h1.place-name Louvre Museum
+            .place
+                img(src="/assets/orange-gradient.png", alt="Orange Gradient Aesthetics")
+                h1.place-name Capital Hill Residence
+            .place
+                img(src="/assets/red-gradient.png", alt="Orange Gradient Aesthetics")
+                h1.place-name Zaragoza Bridge Pavilion
+            .place
+                img(src="/assets/blue-gradient.png", alt="Orange Gradient Aesthetics")
+                h1.place-name Marina Bay
+            .place
+                img(src="/assets/orange-gradient.png", alt="Orange Gradient Aesthetics")
+                h1.place-name Louvre Museum
+        .future-init-container
+            video(src="/assets/bg-video.webm" autoplay loop muted).video 
+            h1.future-init-heading 
+                span WELCOME 
+                span TO THE 
+                span FUTURE

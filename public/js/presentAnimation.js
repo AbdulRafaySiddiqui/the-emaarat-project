@@ -7,6 +7,7 @@ export class PresentAnimation {
     this.animatePresentTitle();
     this.animatePresentContent();
     this.animateRevealImage();
+    this.lastSectionRevealAnimation();
   }
 
   animatePatternImage() {
@@ -128,6 +129,19 @@ export class PresentAnimation {
         // toggleActions: "play none none reverse",
         scrub: true,
       },
+    });
+  }
+
+  lastSectionRevealAnimation() {
+    // gsap.to(".future-init-container", {
+
+    // })
+    ScrollTrigger.create({
+      trigger: ".future-init-container",
+      start: "top top",
+      end: "bottom top",
+      pin: true,
+      scrub: true,
     });
   }
 }
