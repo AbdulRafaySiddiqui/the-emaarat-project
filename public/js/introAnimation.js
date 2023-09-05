@@ -127,8 +127,8 @@ export async function introAnimation() {
     scrollTrigger: {
       id: "TEXT-REVEAL",
       trigger: ".section2 .para-wrapper .image-3",
-      start: "bottom+=2400px top",
-      end: "bottom+=4800px top",
+      start: () => `bottom+=${window.innerWidth * 1.7}px top`,
+      end: () => `bottom+=${window.innerWidth * 3.5}px top`,
       // containerAnimation: scrollTween,
       // scrub: true,
       toggleActions: "play none none reverse",
@@ -141,8 +141,8 @@ export async function introAnimation() {
     scrollTrigger: {
       id: "TEXT-REVEAL-2",
       trigger: ".section3 .image-4",
-      start: "bottom+=3200px top",
-      end: "bottom+=5200px top",
+      start: () => `bottom+=${window.innerWidth * 2.2}px top`,
+      end: `bottom+=${window.innerWidth * 5}px top`,
       toggleActions: "play none none reverse",
       markers: true,
     },
