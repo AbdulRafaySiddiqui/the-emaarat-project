@@ -81,8 +81,10 @@
     height: 100vh;
     position: relative;
     background: #f3f7f6;
+    will-change: all;
 
     h1.heading {
+      will-change: transform;
       transform-origin: center top;
       position: absolute;
       top: 10%;

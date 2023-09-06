@@ -21,6 +21,12 @@ export class PresentAnimation {
         end: "bottom top",
         pin: true,
         scrub: true,
+        onEnter: () => {
+          document.querySelector(".main").style.willChange = "transform";
+        },
+        onEnterBack: () => {
+          document.querySelector(".main").style.willChange = "auto";
+        },
       },
     });
   }
@@ -74,7 +80,6 @@ export class PresentAnimation {
           start: "top top",
           end: "bottom top",
           pin: true,
-          markers: true,
           scrub: true,
         },
       })
@@ -120,7 +125,6 @@ export class PresentAnimation {
         id: "image-reveal",
         trigger: ".present-section-image-reveal",
         start: "top top",
-        markers: true,
         pin: true,
         scrub: true,
       },

@@ -35,9 +35,9 @@ ScrollTrigger.scrollerProxy(".main", {
 
   // following line is not required to work pinning on touch screen
 
-  pinType: document.querySelector(".main").style.transform
-    ? "transform"
-    : "fixed",
+  // pinType: document.querySelector(".main").style.transform
+  //   ? "transform"
+  //   : "fixed",
 });
 
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());

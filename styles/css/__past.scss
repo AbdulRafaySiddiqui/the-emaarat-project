@@ -37,6 +37,11 @@
   .last-section {
     background: #f3eeeb;
     width: 400vw;
+    background-image: url("/assets/bg-text-effect.png"),
+      url("/assets/old-textured-bg.png");
+
+    background-size: contain, contain;
+    // background-repeat: no-repeat;
   }
 
   .pinned-section {
@@ -376,10 +381,10 @@
   .content.section5 {
     width: 100vw;
     height: 100%;
-    background-image: url("/assets/bg-text-effect.png"),
-      url("/assets/old-textured-bg.png");
-    background-size: 100% 100%, 100% 100%;
-    background-repeat: no-repeat, no-repeat;
+    // background-image: url("/assets/bg-text-effect.png");
+    // url("/assets/old-textured-bg.png");
+    // background-size: 100% 100%;
+    // background-repeat: no-repeat;
     position: relative;
 
     .top-images {
@@ -396,11 +401,11 @@
         top: 0;
         left: 0;
         width: 100%;
+        transform: translateY(-100%);
         height: auto;
-        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
 
         &:nth-child(1) {
-          clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
+          transform: translateY(0%);
         }
       }
     }
@@ -420,10 +425,10 @@
         left: 0;
         width: 100%;
         height: auto;
-        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+        transform: translateY(-100%);
 
         &:nth-child(1) {
-          clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
+          transform: translateY(0%);
         }
       }
     }

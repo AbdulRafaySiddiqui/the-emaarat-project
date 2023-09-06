@@ -116,7 +116,7 @@ export async function introAnimation() {
       trigger: ".section1",
       containerAnimation: scrollTween,
       scrub: true,
-      start: () => `+=${pastElChilds[0].offsetWidth - window.innerWidth / 5}px`,
+      start: () => `+=${pastElChilds[0].offsetWidth}px`,
       end: () => `+=${pastElChilds[0].offsetWidth + window.innerWidth / 2}px`,
       invalidateOnRefresh: true,
     },
@@ -127,10 +127,9 @@ export async function introAnimation() {
     scrollTrigger: {
       id: "TEXT-REVEAL",
       trigger: ".section2 .para-wrapper .image-3",
-      start: () => `bottom+=${window.innerWidth * 1.7}px top`,
+      start: () => `bottom+=${window.innerWidth * 2}px top`,
       end: () => `bottom+=${window.innerWidth * 3.5}px top`,
       toggleActions: "play none none reverse",
-      markers: true,
     },
   });
 
@@ -139,10 +138,9 @@ export async function introAnimation() {
     scrollTrigger: {
       id: "TEXT-REVEAL-2",
       trigger: ".section3 .image-4",
-      start: () => `bottom+=${window.innerWidth * 2.2}px top`,
+      start: () => `bottom+=${window.innerWidth * 2.3}px top`,
       end: `bottom+=${window.innerWidth * 5}px top`,
       toggleActions: "play none none reverse",
-      markers: true,
     },
   });
 
