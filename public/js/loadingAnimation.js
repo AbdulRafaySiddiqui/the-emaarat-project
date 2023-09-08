@@ -6,14 +6,14 @@ export async function loaderAnimation() {
         loaderEl.style.display = "none";
       },
     })
-    .from(".image", {
-      opacity: 0,
+    .to(".image", {
+      opacity: 1,
       ease: Quart.easeInOut,
     })
-    .from(
+    .to(
       ".loader .child",
       {
-        y: "100%",
+        y: "0%",
         stagger: 0.1,
         duration: 1.4,
         delay: 0.2,
@@ -21,18 +21,18 @@ export async function loaderAnimation() {
       },
       "-=0.6"
     )
-    .from(
+    .to(
       ".progress__indicator",
       {
-        scale: 0,
+        scale: 1,
         ease: Quart.easeInOut,
       },
       "-=1.7"
     )
-    .from(
+    .to(
       ".progress__bar",
       {
-        scaleX: 0,
+        scaleX: 1,
         transformOrigin: "left",
         ease: Quart.easeInOut,
       },
