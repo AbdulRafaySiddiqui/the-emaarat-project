@@ -1,6 +1,7 @@
 {
   "name": "the-emaarat-project",
   "version": "1.0.0",
+  "type": "module",
   "license": "MIT",
   "dependencies": {
     "browserify": "^17.0.0",
