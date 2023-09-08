@@ -4,21 +4,20 @@
   "type": "module",
   "license": "MIT",
   "dependencies": {
-    "browserify": "^17.0.0",
     "connect-livereload": "^0.6.1",
     "express": "^4.18.2",
+    "firebase": "^10.3.1",
+    "firebase-tools": "^12.5.2",
     "livereload": "^0.9.3",
     "pug": "^3.0.2"
   },
   "devDependencies": {
     "browser-sync": "^2.29.3",
     "node-sass": "^9.0.0",
-    "node-sass-middleware": "^1.0.1",
-    "nodemon": "^3.0.1",
-    "parcel": "^2.9.3"
+    "nodemon": "^3.0.1"
   },
   "scripts": {
-    "start:server": "nodemon app.js",
+    "start:server": "nodemon app.cjs",
     "start:dev": "yarn run start:server & yarn run start:browser-sync",
     "start:browser-sync": "browser-sync start --proxy 'http://localhost:3000' --files 'public/css/*.css, public/js/*.js, src/views/*.pug'"
   }
