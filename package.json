@@ -18,7 +18,7 @@
     "parcel": "^2.9.3"
   },
   "scripts": {
-    "start:server": "nodemon app.js",
+    "start:server": "nodemon app.cjs",
     "start:dev": "yarn run start:server & yarn run start:browser-sync",
     "start:browser-sync": "browser-sync start --proxy 'http://localhost:3000' --files 'public/css/*.css, public/js/*.js, src/views/*.pug'"
   }
