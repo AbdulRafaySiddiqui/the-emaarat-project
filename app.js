@@ -1,25 +1,24 @@
-const express = require("express");
-const path = require("path");
-const sassMiddleware = require("node-sass-middleware"); // Import the SCSS middleware
+import express from "express";
+import sassMiddleware from "node-sass-middleware";
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.set("views", path.join(__dirname, "src", "views"));
+app.set("views", "src/views");
 app.set("view engine", "pug");
 
 // Set up SCSS middleware for compiling SCSS to CSS
 app.use(
   sassMiddleware({
-    src: path.join(__dirname, "styles"), // Location of your SCSS files
-    dest: path.join(__dirname, "public"), // Compiled CSS will be placed here
+    src: "styles", // Location of your SCSS files
+    dest: "public", // Compiled CSS will be placed here
     debug: true, // Set to true for debugging
     outputStyle: "compressed", // Set the desired output style (nested, expanded, compact, compressed)
   })
 );
 
 // Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static("public"));
 
 // Rest of your code...
 app.get("/", (req, res) => {
