@@ -66,6 +66,35 @@ body {
   overflow: hidden;
 }
 
+// $breakpoint is the variable that can have several values
+@mixin devices($breakpoint) {
+  //the name of the mixin is devices
+
+  @if $breakpoint == desktop {
+    @media only screen and (max-width: 1200px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == xlMobile {
+    @media only screen and (max-width: 650px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: 500px) {
+      @content;
+    }
+  }
+}
+
 @import "./__loader.scss";
 @import "./__intro.scss";
 @import "./__past.scss";
