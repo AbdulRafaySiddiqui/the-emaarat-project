@@ -181,6 +181,11 @@
     }
   }
 
+  #webgl-canvas {
+    position: absolute;
+    z-index: 1;
+  }
+
   .content.section3 {
     width: 100vw;
     height: 100%;

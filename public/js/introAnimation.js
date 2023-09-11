@@ -76,6 +76,11 @@ export async function introAnimation() {
         opacity: 1,
         duration: 1,
         ease: "none",
+        onComplete: () => {
+          document.querySelector(
+            ".past"
+          ).style.cursor = `url(assets/past-mouse.svg), auto`;
+        },
       },
       "anim"
     );

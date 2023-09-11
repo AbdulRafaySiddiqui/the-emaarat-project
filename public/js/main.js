@@ -1,3 +1,4 @@
+import { ImageHoverEffect } from "./ImageHoverEffect/ImageHoverMain.js";
 import { animateMarquee } from "./horizontalLoop.js";
 import { ImageSlider } from "./imageSlider.js";
 import { introAnimation } from "./introAnimation.js";
@@ -48,6 +49,12 @@ ScrollTrigger.defaults({
   scroller: ".main",
   // markers: true,
 });
+// const canvas = document.querySelector("#webgl-canvas");
+// const effect = new ImageHoverEffect(
+//   canvas,
+//   "/assets/front-image.png",
+//   "/assets/back-image.png"
+// );
 
 const main = async () => {
   await loaderAnimation();

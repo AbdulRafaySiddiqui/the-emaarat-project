@@ -12,8 +12,14 @@ html
         include ./past.pug  
       include ./present.pug
 
+
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.156.1/three.min.js") 
     script(src="https://cdn.jsdelivr.net/npm/split-type@0.3.3/umd/index.min.js") 
     script(src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js") 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js") 
+   
+
+    //- script(id="fragmentShader" src="/js/shaders/fragment-shader.glsl" type="x-shader/x-fragment")
     script(type="module" src="/js/main.js")
+
