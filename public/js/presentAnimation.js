@@ -1,3 +1,4 @@
+import { CustomCursor } from "./customCursor.js";
 export class PresentAnimation {
   constructor() {
     this.breakContent();
@@ -8,6 +9,7 @@ export class PresentAnimation {
     this.animatePresentContent();
     this.animateRevealImage();
     this.lastSectionRevealAnimation();
+    this.cursorAnimation = new CustomCursor(document.querySelector("#cursor"));
   }
 
   animatePatternImage() {
