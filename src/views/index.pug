@@ -7,12 +7,12 @@ html
     link(rel="stylesheet" href="/css/styles.css")
   body
     .main
-     
       include ./loader.pug
       .intro-past 
         include ./intro.pug
         include ./past.pug  
       include ./present.pug
+      include ./future.pug
 
 
     script(src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.156.1/three.min.js") 
@@ -21,7 +21,5 @@ html
     script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js") 
    
-
-    //- script(id="fragmentShader" src="/js/shaders/fragment-shader.glsl" type="x-shader/x-fragment")
     script(type="module" src="/js/main.js")
 

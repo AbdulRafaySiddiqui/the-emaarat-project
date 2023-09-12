@@ -1,4 +1,5 @@
 import { ImageHoverEffect } from "./ImageHoverEffect/ImageHoverMain.js";
+import { FutureAnimation } from "./futureAnimation.js";
 import { animateMarquee } from "./horizontalLoop.js";
 import { ImageSlider } from "./imageSlider.js";
 import { introAnimation } from "./introAnimation.js";
@@ -68,6 +69,8 @@ const main = async () => {
   new ImageSlider();
 
   animateMarquee();
+
+  new FutureAnimation();
 };
 
 main().then(() => {});

@@ -1,0 +1,19 @@
+.future__init__pin {
+  width: 100%;
+  height: 600vh;
+  position: relative;
+  z-index: -2;
+  margin-top: -100vh;
+  background: #182430;
+}
+
+.future {
+  width: 100%;
+  height: 100%;
+
+  .future__root {
+    width: 100%;
+    height: 100vh;
+    background: #182430;
+  }
+}

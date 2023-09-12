@@ -148,12 +148,17 @@ export class PresentAnimation {
   }
 
   lastSectionRevealAnimation() {
-    ScrollTrigger.create({
-      trigger: ".future-init-container",
-      start: "top top",
-      end: "bottom top",
-      pin: true,
-      scrub: true,
+    gsap.to(".future-init-container", {
+      delay: 2,
+      autoAlpha: 0,
+      scrollTrigger: {
+        trigger: ".future-init-container",
+        start: "top top",
+        end: `bottom+=${window.innerHeight * 4}px top`,
+        pin: true,
+        scrub: true,
+        pinSpacing: false,
+      },
     });
   }
 }
