@@ -10,11 +10,21 @@
     }
   }
 
-  .spinning-star {
-    width: 200px;
-    height: 200px;
+  .spinning-star-container {
+    width: 100%;
+    height: 100%;
+    background: white;
     display: flex;
     justify-content: center;
+    padding-bottom: 20vh;
+
+    .spinning-star {
+      transform: rotate(0deg);
+      will-change: transform;
+      width: 200px;
+      height: 200px;
+      // transform: rotate()
+    }
   }
 
   #cursor {
@@ -22,8 +32,9 @@
     height: 100vh;
     position: absolute;
     top: 0;
+    pointer-events: none;
+    user-select: none;
     left: 0;
-
     z-index: 1000;
 
     span {
@@ -109,7 +120,7 @@
 
     .pattern-img {
       z-index: 2;
-      width: 800px;
+      width: 32vw;
       height: auto;
       transform-origin: bottom right;
       transform: rotate(90deg);
@@ -158,7 +169,7 @@
 
         .line {
           width: 1px;
-          height: 120px;
+          height: 8vh;
           background-color: #fff;
         }
 
@@ -270,16 +281,19 @@
     }
 
     .image-reveal {
-      position: relative;
+      position: absolute;
+      left: 50%;
       width: 60%;
       overflow: hidden;
       margin: 0 auto;
       height: 100%;
+      transform: translateX(-50%);
 
       img {
         position: absolute;
         top: 0%;
-        left: 0%;
+        left: 50%;
+        transform: translateX(-50%);
         width: 100vw;
         height: 100vh;
       }

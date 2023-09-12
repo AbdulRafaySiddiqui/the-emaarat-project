@@ -56,6 +56,10 @@ ScrollTrigger.defaults({
 //   "/assets/back-image.png"
 // );
 
+gsap.config({
+  force3D: false,
+});
+
 const main = async () => {
   await loaderAnimation();
   await introAnimation();

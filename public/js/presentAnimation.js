@@ -9,6 +9,7 @@ export class PresentAnimation {
     this.animatePresentContent();
     this.animateRevealImage();
     this.lastSectionRevealAnimation();
+    this.animateStar();
     this.cursorAnimation = new CustomCursor(document.querySelector("#cursor"));
   }
 
@@ -29,6 +30,19 @@ export class PresentAnimation {
         onEnterBack: () => {
           document.querySelector(".main").style.willChange = "auto";
         },
+      },
+    });
+  }
+
+  animateStar() {
+    gsap.to(".spinning-star", {
+      rotate: "360deg",
+      scrollTrigger: {
+        id: "start-rotate-anim",
+        trigger: ".present-section-content",
+        start: "top 50%",
+        end: () => "bottom+=2000px top",
+        scrub: true,
       },
     });
   }
