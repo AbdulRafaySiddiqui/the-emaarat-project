@@ -8,7 +8,6 @@ export class PresentAnimation {
     this.animatePresentTitle();
     this.animatePresentContent();
     this.animateRevealImage();
-    this.lastSectionRevealAnimation();
     this.animateStar();
     this.cursorAnimation = new CustomCursor(document.querySelector("#cursor"));
   }
@@ -143,21 +142,6 @@ export class PresentAnimation {
         start: "top top",
         pin: true,
         scrub: true,
-      },
-    });
-  }
-
-  lastSectionRevealAnimation() {
-    gsap.to(".future-init-container", {
-      delay: 2,
-      autoAlpha: 0,
-      scrollTrigger: {
-        trigger: ".future-init-container",
-        start: "top top",
-        end: `bottom+=${window.innerHeight * 4}px top`,
-        pin: true,
-        scrub: true,
-        pinSpacing: false,
       },
     });
   }
