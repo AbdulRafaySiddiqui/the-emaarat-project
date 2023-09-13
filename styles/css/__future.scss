@@ -138,41 +138,26 @@
       opacity: 0;
       font-family: "Graysun", sans-serif;
 
-      .filled-heading {
+      .heading {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         font-size: 6rem;
-        color: white;
 
         span {
-          white-space: nowrap;
           display: block;
-
-          &:nth-child(1) {
-            transform: translateX(-10%);
-          }
+          white-space: nowrap;
         }
-      }
 
-      .outlined-heading {
-        position: absolute;
-        top: calc(50% + 1px);
-        left: calc(50% + 1px);
-        transform: translate(-50%, -50%);
-        font-size: 6rem;
-        color: transparent;
-        -webkit-text-stroke-color: white;
-        -webkit-text-stroke-width: 2px;
-
-        span {
-          white-space: nowrap;
-          display: block;
-
-          &:nth-child(1) {
-            transform: translateX(-10%);
-          }
+        span.filled {
+          transform: translateX(-10%);
+          color: white;
+        }
+        span.outlined {
+          color: transparent;
+          -webkit-text-stroke-color: white;
+          -webkit-text-stroke-width: 1px;
         }
       }
     }
@@ -193,5 +178,14 @@
         object-fit: cover;
       }
     }
+  }
+
+  .future-second-pinned-section {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    z-index: -2;
+    margin-top: -100vh;
+    background: green;
   }
 }
