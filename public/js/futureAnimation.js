@@ -1,7 +1,13 @@
+import { locoScroll } from "./main.js";
+
+gsap.registerPlugin(ScrollToPlugin);
+
 export class FutureAnimation {
   constructor() {
     this.pinFutureSection();
     this.futureSectionRevealAnimation();
+    this.exploreFutureAnimation();
+    this.btnClickListeners();
   }
 
   pinFutureSection() {
@@ -12,8 +18,18 @@ export class FutureAnimation {
         start: "top top",
         end: `bottom+=${window.innerHeight * 20}px top`,
         pin: true,
-        markers: true,
         scrub: true,
+        onUpdate: (e) => {
+          if (e.progress > 0.7) {
+            gsap.set(".future .pin-spacer", {
+              zIndex: 1,
+            });
+          } else {
+            gsap.set(".future .pin-spacer", {
+              zIndex: -1,
+            });
+          }
+        },
       },
     });
   }
@@ -239,12 +255,21 @@ export class FutureAnimation {
         "+=3"
       )
       .to(
+        ".sindalah-content",
+        {
+          bottom: "100%",
+          delay: 2,
+          duration: 4,
+        },
+        "sindalah-content"
+      )
+      .to(
         ".sindalah-overlay",
         {
           opacity: 1,
           duration: 1.5,
         },
-        "+=0.5"
+        "sindalah-content+=0.1"
       )
       .to(
         ".sindalah-feature-1",
@@ -252,7 +277,7 @@ export class FutureAnimation {
           duration: 1.5,
           left: "25%",
         },
-        "-=0.4"
+        "sindalah-content+=0.1"
       )
       .to(
         ".sindalah-feature-2",
@@ -260,7 +285,7 @@ export class FutureAnimation {
           duration: 1.5,
           left: "25%",
         },
-        "-=0.1"
+        "sindalah-content+=1.8"
       )
       .to(
         ".sindalah-feature-3",
@@ -268,7 +293,7 @@ export class FutureAnimation {
           duration: 1.5,
           left: "25%",
         },
-        "-=0.1"
+        "sindalah-content+=3"
       )
       .to(
         ".future__root",
@@ -310,5 +335,60 @@ export class FutureAnimation {
         },
         "+=0.4"
       );
+  }
+
+  exploreFutureAnimation() {
+    this.exploreFuture = gsap
+      .timeline()
+      .to(".future-adrenaline-root", {
+        opacity: 0,
+      })
+      .to(".future-showoff-title", {
+        top: "45%",
+        opacity: 1,
+      })
+      .to(".showcase-img", {
+        keyframes: {
+          opacity: [0, 1, 0],
+        },
+        duration: 1,
+        stagger: 0.25,
+      })
+      // .to(
+      //   ".future-showoff-title",
+      //   {
+      //     opacity: 0,
+      //   },
+      //   "+=0.5"
+      // )
+      .pause();
+  }
+
+  btnClickListeners() {
+    this.seeMoreBtn = document.querySelector(".btn.see-more");
+    this.goHomeBtn = document.querySelector(".btn.go-home");
+    this.goToHomeBtn = document.querySelector(".go-to-home");
+    this.futureShowcaseSection = document.querySelector(".future-showcase");
+
+    this.seeMoreBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      locoScroll.stop();
+      this.exploreFuture.play();
+      this.futureShowcaseSection.style.zIndex = "1";
+    });
+
+    this.goHomeBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      locoScroll.scrollTo("top");
+      this.futureShowcaseSection.style.zIndex = "0";
+    });
+
+    this.goToHomeBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      locoScroll.start();
+      locoScroll.scrollTo("top");
+      this.exploreFuture.reverse();
+      this.futureShowcaseSection.style.zIndex = "0";
+    });
   }
 }

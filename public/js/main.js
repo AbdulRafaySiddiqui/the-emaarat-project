@@ -8,7 +8,7 @@ import { PresentAnimation } from "./presentAnimation.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const locoScroll = new LocomotiveScroll({
+export const locoScroll = new LocomotiveScroll({
   el: document.querySelector(".main"),
   smooth: true,
 
@@ -57,10 +57,6 @@ ScrollTrigger.defaults({
 //   "/assets/back-image.png"
 // );
 
-gsap.config({
-  force3D: false,
-});
-
 const main = async () => {
   await loaderAnimation();
   await introAnimation();
@@ -69,7 +65,6 @@ const main = async () => {
   new ImageSlider();
 
   animateMarquee();
-
   new FutureAnimation();
 };
 
