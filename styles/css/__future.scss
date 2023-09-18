@@ -57,6 +57,27 @@
     background-color: #182430;
     will-change: background-color;
 
+    .future-cursor-container {
+      position: absolute;
+      background-color: transparent;
+      // background: rgba(yellow, 0.4);
+      width: 100%;
+      height: 100%;
+
+      .future-cursor {
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgba(245, 208, 112, 1);
+        mix-blend-mode: difference;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 5;
+        pointer-events: none;
+        user-select: none;
+        will-change: transform;
+      }
+    }
+
     .logo {
       position: absolute;
       top: 12.5%;
@@ -451,10 +472,11 @@
 
           .btn {
             cursor: pointer;
-            width: 384px;
-            padding: 15px 0px;
+            width: 320px;
+            padding: 20px 0px 25px 0px;
             font-family: "Graysun", sans-serif;
             background: transparent;
+            font-size: 0.7rem;
           }
 
           .go-home {
@@ -595,6 +617,109 @@
         left: 8%;
         width: 766px;
         height: 445px;
+      }
+    }
+
+    .future-final-section {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0%;
+
+      .future-final-heading-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        h1.heading {
+          font-size: 2.25rem;
+          font-family: "Barlow", sans-serif;
+          font-weight: 300;
+          color: white;
+
+          .line {
+            white-space: nowrap;
+            display: block;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            will-change: opacity, transform;
+
+            span {
+              position: relative;
+              overflow: hidden;
+
+              .strikethrough {
+                position: absolute;
+                top: 53%;
+                left: 0%;
+                width: 0%;
+                height: 3px;
+                background-color: white;
+                will-change: width;
+              }
+            }
+          }
+        }
+
+        .go-to-home {
+          opacity: 0;
+          position: relative;
+          left: 50%;
+          transform: translateX(-50%) translateY(30px);
+          margin-top: 8vh;
+          cursor: pointer;
+          border: 1px solid #4af4ff;
+          padding: 20px 3.5vw 25px 3.5vw;
+          font-size: 0.7rem;
+          font-family: "Graysun", sans-serif;
+          color: #4af4ff;
+          background-color: transparent;
+        }
+      }
+
+      .future-footer-container {
+        position: absolute;
+        top: calc(100% - 0px);
+        left: 0%;
+        width: 100%;
+        will-change: top;
+        height: 250px;
+        max-height: 250px;
+
+        .bg-img {
+          background-image: url("/assets/future-footer.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: 100%;
+          height: 100%;
+        }
+
+        .social-links {
+          position: absolute;
+          top: 15%;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          gap: 30px;
+          color: white;
+          font-family: "Barlow", sans-serif;
+
+          .link {
+            cursor: pointer;
+            z-index: 0;
+            opacity: 0;
+            transform: translateY(30px);
+            will-change: opacity, transform;
+
+            &:hover {
+              color: #4af4ff;
+              font-style: italic;
+            }
+          }
+        }
       }
     }
   }

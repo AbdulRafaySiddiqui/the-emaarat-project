@@ -2,8 +2,61 @@ import { locoScroll } from "./main.js";
 
 gsap.registerPlugin(ScrollToPlugin);
 
+export class FutureMouseFollower {
+  constructor() {
+    this.mouseEl = document.querySelector(".future-cursor");
+
+    gsap.set(this.mouseEl, {
+      xPercent: -50,
+      yPercent: -50,
+    });
+    this.mousePos = {
+      x: 0,
+      y: 0,
+    };
+    this.cursorPos = {
+      x: 0,
+      y: 0,
+    };
+
+    this.xSet = gsap.quickSetter(this.mouseEl, "x", "px");
+    this.ySet = gsap.quickSetter(this.mouseEl, "y", "px");
+
+    this.addEventListener();
+    this.tick();
+  }
+
+  updateMousePos(e) {
+    this.mousePos.x = e.clientX;
+    this.mousePos.y = e.clientY;
+  }
+
+  addEventListener() {
+    window.addEventListener("mousemove", this.updateMousePos.bind(this));
+  }
+
+  tick() {
+    this.xSet(this.cursorPos.x);
+    this.ySet(this.cursorPos.y);
+
+    this.cursorPos.x = gsap.utils.interpolate(
+      this.cursorPos.x,
+      this.mousePos.x,
+      0.2
+    );
+    this.cursorPos.y = gsap.utils.interpolate(
+      this.cursorPos.y,
+      this.mousePos.y,
+      0.2
+    );
+
+    window.requestAnimationFrame(this.tick.bind(this));
+  }
+}
+
 export class FutureAnimation {
   constructor() {
+    this.mouseFollower = new FutureMouseFollower();
     this.pinFutureSection();
     this.futureSectionRevealAnimation();
     this.exploreFutureAnimation();
@@ -354,13 +407,61 @@ export class FutureAnimation {
         duration: 1,
         stagger: 0.25,
       })
-      // .to(
-      //   ".future-showoff-title",
-      //   {
-      //     opacity: 0,
-      //   },
-      //   "+=0.5"
-      // )
+      .to(
+        ".future-showoff-title",
+        {
+          opacity: 0,
+        },
+        "+=0.5"
+      )
+      .to(
+        [
+          ".future-final-heading-container .heading .line",
+          ".future-final-heading-container .go-to-home",
+        ],
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.06,
+          onStart: () => {
+            gsap.set(".future-final-heading-container", {
+              zIndex: 2,
+            });
+          },
+        },
+        "+=0.5"
+      )
+      .to(
+        ".future-final-heading-container .heading .line .strikethrough",
+        {
+          width: "100%",
+          ease: Expo.easeInOut,
+          duration: 1.2,
+          onStart: () => {
+            gsap.set(".future-footer-container", {
+              zIndex: 2,
+            });
+          },
+        },
+        "footer-reveal"
+      )
+      .to(
+        ".future-footer-container",
+        {
+          top: "-=125px",
+          ease: Expo.easeOut,
+        },
+        "footer-reveal"
+      )
+      .to(
+        ".future-footer-container .social-links .link",
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.06,
+        },
+        "footer-reveal+=0.6"
+      )
       .pause();
   }
 
@@ -389,6 +490,12 @@ export class FutureAnimation {
       locoScroll.scrollTo("top");
       this.exploreFuture.reverse();
       this.futureShowcaseSection.style.zIndex = "0";
+      gsap.set(
+        [".future-final-heading-container", ".future-footer-container"],
+        {
+          zIndex: 0,
+        }
+      );
     });
   }
 }
