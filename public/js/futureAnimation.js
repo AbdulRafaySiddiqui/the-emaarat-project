@@ -373,6 +373,13 @@ export class FutureAnimation {
         "background"
       )
       .to(
+        [".the-line-img", ".trojena-img"],
+        {
+          opacity: 0,
+        },
+        "background-=2"
+      )
+      .to(
         [".the-line", ".trojena", ".sindalah", ".grid-line"],
         {
           duration: 2,
@@ -448,7 +455,7 @@ export class FutureAnimation {
       .to(
         ".future-footer-container",
         {
-          top: "-=125px",
+          top: () => (window.innerHeight < 1027 ? "-=100px" : "-=125px"),
           ease: Expo.easeOut,
         },
         "footer-reveal"

@@ -1,4 +1,5 @@
 import { fluidAnimation } from "./fluidAnimation.js";
+import { FutureAnimation } from "./futureAnimation.js";
 import { PastLastSectionAnimation } from "./pastLastSectionAnimation.js";
 import { SectionScrollAnimation } from "./sectionscrollAnimation.js";
 
@@ -22,6 +23,8 @@ export async function introAnimation() {
       onComplete: () => {
         const mainEl = document.querySelector(".main");
         mainEl.style.height = "100%";
+
+        document.querySelector(".grid-line4").style.opacity = 1;
       },
     })
     .to(canvas, {

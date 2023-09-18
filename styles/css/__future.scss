@@ -155,6 +155,7 @@
     }
 
     .grid-line4 {
+      opacity: 0;
       top: 0%;
       left: 75%;
       transform: translateY(-100%);
@@ -519,9 +520,43 @@
         will-change: top, opacity;
 
         span {
+          position: relative;
           white-space: nowrap;
           text-align: center;
           display: block;
+
+          &:first-child:before,
+          &:first-child:after {
+            display: block;
+            content: attr(data-glitch);
+            position: absolute;
+            top: 0;
+            left: 24%;
+            opacity: 0.8;
+          }
+          &:not(:first-child):before,
+          &:not(:first-child):after {
+            display: block;
+            content: attr(data-glitch);
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.8;
+          }
+        }
+
+        span:before {
+          animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both
+            infinite;
+          color: #4af4ff;
+          z-index: -1;
+        }
+
+        span:after {
+          animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+            reverse both infinite;
+          color: #f5d070;
+          z-index: -2;
         }
       }
 
@@ -722,5 +757,47 @@
         }
       }
     }
+  }
+}
+
+// <div class="glitch-wrapper">
+//    <div class="glitch" data-glitch="glitch">glitch</div>
+// </div>
+
+// <style>
+
+.glitch {
+  position: relative;
+  font-size: 73px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+  letter-spacing: 5px;
+  z-index: 1;
+}
+
+@keyframes glitch-color {
+  0% {
+    transform: translate(0);
+  }
+
+  20% {
+    transform: translate(-3px, 3px);
+  }
+
+  40% {
+    transform: translate(-3px, -3px);
+  }
+
+  60% {
+    transform: translate(3px, 3px);
+  }
+
+  80% {
+    transform: translate(3px, -3px);
+  }
+
+  to {
+    transform: translate(0);
   }
 }
