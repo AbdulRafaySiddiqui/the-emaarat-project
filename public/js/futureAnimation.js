@@ -1,4 +1,5 @@
 import { locoScroll } from "./main.js";
+import "./lastSectionbackgroundEffect.js";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -421,6 +422,9 @@ export class FutureAnimation {
         },
         "+=0.5"
       )
+      .to("#webgl_canvas", {
+        opacity: 1,
+      })
       .to(
         [
           ".future-final-heading-container .heading .line",

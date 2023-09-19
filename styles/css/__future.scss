@@ -662,6 +662,13 @@
       left: 0;
       top: 0%;
 
+      #webgl_canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+      }
+
       .future-final-heading-container {
         position: absolute;
         top: 50%;
