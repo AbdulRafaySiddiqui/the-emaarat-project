@@ -1,4 +1,3 @@
-import { ImageHoverEffect } from "./ImageHoverEffect/ImageHoverMain.js";
 import { FutureAnimation } from "./futureAnimation.js";
 import { animateMarquee } from "./horizontalLoop.js";
 import { ImageSlider } from "./imageSlider.js";

@@ -48,7 +48,6 @@ function init() {
   group.scale.set(2, 2, 1.4);
 
   scene.add(group);
-  renderer.render(scene, camera);
 }
 
 /**
