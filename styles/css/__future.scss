@@ -473,11 +473,43 @@
 
           .btn {
             cursor: pointer;
-            width: 320px;
-            padding: 20px 0px 25px 0px;
+            width: 15.625vw;
+            position: relative;
+            // height: 30px;
             font-family: "Graysun", sans-serif;
             background: transparent;
+            min-height: 8.54vh;
+            padding: 2vh;
             font-size: 0.7rem;
+
+            .btn-inner {
+              position: relative;
+              display: block;
+              overflow: hidden;
+              height: 100%;
+
+              span {
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: top 0.4s ease-in-out;
+                white-space: nowrap;
+
+                &:nth-child(2) {
+                  top: calc(100% + 30px);
+                }
+              }
+            }
+
+            &:hover .btn-inner span:nth-child(1) {
+              top: calc(-100%);
+            }
+
+            &:hover .btn-inner span:nth-child(2) {
+              top: calc(50%);
+            }
           }
 
           .go-home {
@@ -714,11 +746,41 @@
           margin-top: 8vh;
           cursor: pointer;
           border: 1px solid #4af4ff;
-          padding: 20px 3.5vw 25px 3.5vw;
+          // padding: 20px 3.5vw 25px 3.5vw;
           font-size: 0.7rem;
           font-family: "Graysun", sans-serif;
           color: #4af4ff;
+          min-height: 8.54vh;
+          width: 13.6vw;
           background-color: transparent;
+
+          .btn-inner {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            height: 30px;
+
+            span {
+              display: block;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              transition: top 0.4s ease-in-out;
+              white-space: nowrap;
+
+              &:nth-child(2) {
+                top: calc(100% + 30px);
+              }
+            }
+          }
+          &:hover .btn-inner span:nth-child(1) {
+            top: calc(-100%);
+          }
+
+          &:hover .btn-inner span:nth-child(2) {
+            top: calc(50%);
+          }
         }
       }
 
