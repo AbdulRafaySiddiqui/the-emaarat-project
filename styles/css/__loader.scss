@@ -24,7 +24,10 @@
         line-height: 100%;
         font-size: 1.5rem;
         text-align: center;
-        // font-size: 7.594rem;
+
+        @media screen and (max-width: 768px) {
+          font-size: 3.5rem;
+        }
       }
 
       .bold {
@@ -68,6 +71,12 @@
         position: absolute;
         top: -14px;
         left: 0%;
+
+        @media screen and (max-width: 768px) {
+          width: 14px;
+          height: 14px;
+          top: -7px;
+        }
       }
     }
 
@@ -75,6 +84,12 @@
       margin-top: 1vw;
       display: flex;
       justify-content: space-around;
+
+      .progress__caption__heading {
+        @media screen and (max-width: 768px) {
+          font-size: 3.5rem;
+        }
+      }
     }
   }
 }

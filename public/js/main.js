@@ -56,7 +56,21 @@ ScrollTrigger.defaults({
 //   "/assets/back-image.png"
 // );
 
+const stopScrollOnMobile = () => {
+  if (window.innerWidth < 768) {
+    console.log("mobile");
+    locoScroll.stop();
+  } else {
+    console.log("desktop");
+    locoScroll.start();
+  }
+};
+
 const main = async () => {
+  stopScrollOnMobile();
+
+  window.addEventListener("resize", stopScrollOnMobile);
+
   await loaderAnimation();
   await introAnimation();
 
